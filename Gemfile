@@ -5,8 +5,15 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-# Author added gems
+### Author added gems
+
+# To handle currency
 gem 'money-rails', '~>1.12'
+
+# To serialize my json responses
+gem 'active_model_serializers'
+
+# Hotfix to get rails console running
 gem 'rb-readline'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
