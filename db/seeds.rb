@@ -1,31 +1,25 @@
 require 'csv'
 
-csv_text = File.read(Rails.root.join('lib/data/rate_data.csv'))
-csv = CSV.parse(csv_text.scrub, headers: true)
-csv.each do |row|
-  s = ShippingRate.new
-  s.rate_cents = row["rate"]
-  s.rate_currency = row["currency"]
-  s.origin = row["origin"]
-  s.destination = row["destination"]
-  s.service_provider_id = row["shipping company id"]
+ServiceProvider.delete_all
+ShippingRate.delete_all
 
-  s.save
+CSV.foreach(Rails.root.join('lib/data/service_provider_data.csv'), headers: true) do |row|
+  ServiceProvider.create!({
+    id: row['id'].to_i,
+    name: row['name'],
+    flat_rate_cents: row['flat shipping rate'].to_i,
+    currency: row['currency']
+  })
 end
 
-puts "there are now #{ShippingRate.count} rows in the shipping rate table"
-
-
-csv_text = File.read(Rails.root.join('lib/data/service_provider_data.csv'))
-csv = CSV.parse(csv_text.scrub, headers: true)
-csv.each do |row|
-  s = ServiceProvider.new
-  s.id = row['id']
-  s.name = row["name"]
-  s.flat_rate_cents = row["flat shipping rate"]
-  s.flat_rate_currency = row["currency"]
-
-  s.save
+CSV.foreach(Rails.root.join('lib/data/rate_data.csv'), headers: true) do |row|
+  ShippingRate.create!({
+    rate_cents: row["rate"],
+    currency: row["currency"],
+    origin: row["origin"],
+    destination: row["destination"],
+    service_provider_id: row["shipping company id"].to_i
+  })
 end
 
-puts "there are now #{ServiceProvider.count} rows in the service provider table"
+p "#{ShippingRate.count} Shipping Rates and #{ServiceProvider.count} Service Providers added!"
