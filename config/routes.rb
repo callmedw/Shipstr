@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :shipping_rates
-  resources :service_providers
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :shipping_rates do
+    resources :service_providers
+  end
 end
