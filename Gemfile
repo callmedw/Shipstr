@@ -7,6 +7,7 @@ end
 
 # Author added gems
 gem 'money-rails', '~>1.12'
+gem 'rb-readline'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.6'
