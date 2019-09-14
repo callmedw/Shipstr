@@ -46,6 +46,6 @@ class ShippingRatesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def shipping_rate_params
-      params.require(:shipping_rate).permit(:rate, :origin, :destination)
+      params.require(:shipping_rate).permit(:rate_cents, :origin, :destination, :currency)
     end
 end
