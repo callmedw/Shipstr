@@ -46,6 +46,6 @@ class ServiceProvidersController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def service_provider_params
-      params.require(:service_provider).permit(:flat_rate_cents, :currency, :name)
+      params.require(:service_provider).permit(:rate_cents, :currency, :name)
     end
 end

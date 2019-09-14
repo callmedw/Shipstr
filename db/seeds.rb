@@ -7,7 +7,7 @@ CSV.foreach(Rails.root.join('lib/data/service_provider_data.csv'), headers: true
   ServiceProvider.create!({
     id: row['id'].to_i,
     name: row['name'],
-    flat_rate_cents: row['flat shipping rate'].to_i,
+    rate_cents: row['flat shipping rate'].to_i,
     currency: row['currency']
   })
 end

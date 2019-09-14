@@ -57,7 +57,7 @@ Ex:| PUT | localhost:3000/shipping_rates/:id?currency=USD |
 
 ### Service Providers
 acceptable parameters for Service Providers (PATCH, PUT, POST) are:
-name, flat_rate_cents, currency
+name, rate_cents, currency
 
 Ex:| PUT | localhost:3000/service_providers/:id?currency=USD |  
 

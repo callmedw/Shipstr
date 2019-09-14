@@ -2,7 +2,7 @@ class CreateServiceProviders < ActiveRecord::Migration[5.1]
   def change
     create_table :service_providers do |t|
       t.string :name
-      t.monetize :flat_rate
+      t.monetize :rate
       t.string :currency
 
       t.timestamps
