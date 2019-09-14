@@ -5,7 +5,7 @@
 </h1>
 
 <h4 align="center">
- A Rails API to convert EUR to USD currency for the use of Shipping of Service Providers
+  A Rails API to convert EUR to USD currency for the use of Shipping of Service Providers
 </h4>
 
 <p align="center">
@@ -34,6 +34,12 @@
 
 ## API EndPoints
 
+### Shipping Rates
+acceptable parameters for Shipping Rates (PATCH, PUT, POST) are:
+rate_cents, currency, origin, destination,
+
+Ex:| PUT | localhost:3000/shipping_rates/:id?currency=USD |    
+
 | Shipping Rates |
 |---|---|
 | GET | localhost:3000/shipping_rates |    
@@ -41,8 +47,19 @@
 | GET | localhost:3000/shipping_rates/:id |  
 | PATCH | localhost:3000/shipping_rates/:id |  
 | PUT | localhost:3000/shipping_rates/:id |  
-| DELETE | localhost:3000/shipping_rates/:id |
+| DELETE | localhost:3000/shipping_rates/:id |                               
+| GET | /shipping_rates/:shipping_rate_id/service_providers |
+| POST | /shipping_rates/:shipping_rate_id/service_providers |
+| GET | /shipping_rates/:shipping_rate_id/service_providers/:id |
+| PATCH | /shipping_rates/:shipping_rate_id/service_providers/:id |
+| PUT | /shipping_rates/:shipping_rate_id/service_providers/:id |
+| DELETE | /shipping_rates/:shipping_rate_id/service_providers/:id |
 
+### Service Providers
+acceptable parameters for Service Providers (PATCH, PUT, POST) are:
+name, flat_rate_cents, currency
+
+Ex:| PUT | localhost:3000/service_providers/:id?currency=USD |  
 
 | Service Providers |
 |---|---|
@@ -52,6 +69,12 @@
 | PATCH | localhost:3000/service_providers/:id |
 | PUT | localhost:3000/service_providers/:id |
 | DELETE | localhost:3000/service_providers/:id |
+| GET | /service_providers/:service_provider_id/shipping_rates |
+| POST | /service_providers/:service_provider_id/shipping_rates |
+| GET | /service_providers/:service_provider_id/shipping_rates/:id |
+| PATCH | /service_providers/:service_provider_id/shipping_rates/:id |
+| PUT | /service_providers/:service_provider_id/shipping_rates/:id |
+| DELETE | /service_providers/:service_provider_id/shipping_rates/:id |
 
 ## Required Technologies
 

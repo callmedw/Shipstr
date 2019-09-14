@@ -1,5 +1,5 @@
 class ServiceProviderSerializer < ActiveModel::Serializer
-  attributes :name, :flat_rate_cents, :currency
+  attributes :id, :name, :flat_rate_cents, :currency, :shipping_rates
 
   has_many :shipping_rates
 end
