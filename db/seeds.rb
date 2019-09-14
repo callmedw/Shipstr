@@ -13,7 +13,7 @@ csv.each do |row|
   s.save
 end
 
-puts "there are now #{ShippingRate.count} rows in the services table"
+puts "there are now #{ShippingRate.count} rows in the shipping rate table"
 
 
 csv_text = File.read(Rails.root.join('lib/data/service_provider_data.csv'))
@@ -28,4 +28,4 @@ csv.each do |row|
   s.save
 end
 
-puts "there are now #{ServiceProvider.count} rows in the services table"
+puts "there are now #{ServiceProvider.count} rows in the service provider table"

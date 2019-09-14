@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190914013517) do
+ActiveRecord::Schema.define(version: 20190914151909) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,15 +19,14 @@ ActiveRecord::Schema.define(version: 20190914013517) do
     t.string "name"
     t.integer "flat_rate_cents", default: 0, null: false
     t.string "flat_rate_currency", default: "USD", null: false
-    t.string "currency"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "currency"
   end
 
   create_table "shipping_rates", force: :cascade do |t|
     t.integer "rate_cents", default: 0, null: false
     t.string "rate_currency", default: "USD", null: false
-    t.string "currency"
     t.string "origin"
     t.string "destination"
     t.integer "common_amount_cents", default: 0, null: false
@@ -35,6 +34,7 @@ ActiveRecord::Schema.define(version: 20190914013517) do
     t.integer "service_provider_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "currency"
   end
 
 end
