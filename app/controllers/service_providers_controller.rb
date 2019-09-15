@@ -18,7 +18,9 @@ class ServiceProvidersController < ApplicationController
     @service_provider = ServiceProvider.new(service_provider_params)
 
     if @service_provider.save
-      render json: @service_provider, status: :created, location: @service_provider
+      render status: 201, json: {
+        message: "Service Provider has been added!"
+      }
     else
       render json: @service_provider.errors, status: :unprocessable_entity
     end
@@ -26,9 +28,10 @@ class ServiceProvidersController < ApplicationController
 
   # PATCH/PUT /service_providers/1
   def update
-    p params.inspect
     if @service_provider.update(service_provider_params)
-      render json: @service_provider
+      render status: 200, json: {
+        message: "Service Provider has been updated!"
+      }
 
     else
       render json: @service_provider.errors, status: :unprocessable_entity
@@ -37,7 +40,11 @@ class ServiceProvidersController < ApplicationController
 
   # DELETE /service_providers/1
   def destroy
-    @service_provider.destroy
+    if @service_provider.destroy
+      render status: 200, json: {
+        message: "Service Provider removed!"
+      }
+    end
   end
 
   private

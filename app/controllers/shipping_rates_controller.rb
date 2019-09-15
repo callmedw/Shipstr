@@ -18,7 +18,9 @@ class ShippingRatesController < ApplicationController
     @shipping_rate = ShippingRate.new(shipping_rate_params)
 
     if @shipping_rate.save
-      render json: @shipping_rate, status: :created, location: @shipping_rate
+      render status: 201, json: {
+        message: "Shipping Rate has been added!"
+      }
     else
       render json: @shipping_rate.errors, status: :unprocessable_entity
     end
@@ -27,7 +29,9 @@ class ShippingRatesController < ApplicationController
   # PATCH/PUT /shipping_rates/1
   def update
     if @shipping_rate.update(shipping_rate_params)
-      render json: @shipping_rate
+      render status: 200, json: {
+        message: "Shipping Rate has been updated!"
+      }
     else
       render json: @shipping_rate.errors, status: :unprocessable_entity
     end
@@ -35,7 +39,11 @@ class ShippingRatesController < ApplicationController
 
   # DELETE /shipping_rates/1
   def destroy
-    @shipping_rate.destroy
+    if @shipping_rate.destroy
+      render status: 200, json: {
+        message: "Shipping Rate removed!"
+      }
+    end
   end
 
   private
