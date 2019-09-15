@@ -22,10 +22,10 @@
 </p>
 
 <p align="center">
-  <a href="#features">API EndPoints</a> •
+  <a href="#api-endpoints">API EndPoints</a> •
   <a href="#required-technologies">Requirements</a> •
+  <a href="#suggested-resources">Suggested Resources</a> •
   <a href="#how-to-use">How To Use</a> •
-  <a href="#browser-support">Browser Support</a> •
   <a href="#known-bugs">Bug Report</a> •
   <a href="#contact">Contact</a> •
   <a href="#license">License</a>
@@ -38,7 +38,8 @@
 acceptable parameters for Shipping Rates (PATCH, PUT, POST) are:
 rate_cents, currency, origin, destination,
 
-Ex:| PUT | localhost:3000/shipping_rates/:id?currency=USD |    
+Ex: JSON Body Request for PATCH
+<pre> { "shipping_rates": {"currency": "USD", "rates_cents": 23.50}} </pre>
 
 | Shipping Rates |
 |---|---|
@@ -59,7 +60,8 @@ Ex:| PUT | localhost:3000/shipping_rates/:id?currency=USD |
 acceptable parameters for Service Providers (PATCH, PUT, POST) are:
 name, rate_cents, currency
 
-Ex:| PUT | localhost:3000/service_providers/:id?currency=USD |  
+Ex: JSON Body Request for PATCH
+<pre> { "service_providers": {"currency": "USD", "rates_cents": 23.50}} </pre>
 
 | Service Providers |
 |---|---|
@@ -88,6 +90,11 @@ Ex:| PUT | localhost:3000/service_providers/:id?currency=USD |
 * [Atom](https://atom.io/)
 * [Bundler](https://bundler.io)
 
+## Suggested resources
+
+* [Money Rails Gem](https://github.com/RubyMoney/money-rails)
+* [Ruby Money Gem](https://github.com/RubyMoney/money)
+
 ## How To Use
 
 To clone and run this application, you will probably want [Git](https://git-scm.com) installed on your computer. To edit this project you may want a text-editor like [Atom](https://atom.io/). To install gems used in this app you will most likely want a dependency manager like [Bundler](https://bundler.io).
@@ -111,7 +118,7 @@ $ rails db:reset
 # Start the Rails Server
 $ rails server
 
-Now you can begin making API calls! See the list of <a href="#features">API EndPoints</a> to see how to format your calls to the API.
+Now you can begin making API calls! See the list of <a href="#api-endpoints">API EndPoints</a> to see how to format your calls to the API.
 
 ```
 
