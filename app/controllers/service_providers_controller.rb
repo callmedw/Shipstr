@@ -3,7 +3,7 @@ class ServiceProvidersController < ApplicationController
 
   # GET /service_providers
   def index
-    @service_providers = ServiceProvider.all
+    @service_providers = ServiceProvider.all.sort
 
     render json: @service_providers
   end
@@ -26,8 +26,10 @@ class ServiceProvidersController < ApplicationController
 
   # PATCH/PUT /service_providers/1
   def update
+    p params.inspect
     if @service_provider.update(service_provider_params)
       render json: @service_provider
+
     else
       render json: @service_provider.errors, status: :unprocessable_entity
     end

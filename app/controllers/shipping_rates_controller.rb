@@ -3,7 +3,7 @@ class ShippingRatesController < ApplicationController
 
   # GET /shipping_rates
   def index
-    @shipping_rates = ShippingRate.all
+    @shipping_rates = ShippingRate.all.sort
 
     render json: @shipping_rates
   end
