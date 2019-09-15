@@ -13,10 +13,10 @@
     <img src="https://img.shields.io/badge/License-MIT-green.svg?style=popout"
     alt="MIT-license-badge">
   </a>
-  <img src="https://img.shields.io/github/languages/code-size/callmedw/shipstr.svg?style=popout"
+  <img src="https://img.shields.io/github/languages/code-size/callmedw/Shipstr.svg?style=popout"
   alt="code-size-badge">
-  <a href="https://GitHub.com/callmedw/shipstr/issues/">
-    <img src="https://img.shields.io/github/issues/callmedw/shipstr.svg?style=popout"
+  <a href="https://GitHub.com/callmedw/Shipstr/issues/">
+    <img src="https://img.shields.io/github/issues/callmedw/Shipstr.svg?style=popout"
     alt="github-issues-badge">
   </a>
 </p>
@@ -39,10 +39,9 @@ acceptable parameters for Shipping Rates (PATCH, PUT, POST) are:
 rate_cents, currency, origin, destination,
 
 Ex: JSON Body Request for PATCH
-<pre> { "shipping_rates": {"currency": "USD", "rates_cents": 23.50}} </pre>
+```json { "shipping_rates": {"currency": "USD", "rates_cents": 23.50}} ```
 
-| Shipping Rates |
-|---|---|
+|:---:|:---:|
 | GET | localhost:3000/shipping_rates |    
 | POST | localhost:3000/shipping_rates |    
 | GET | localhost:3000/shipping_rates/:id |  
@@ -61,10 +60,9 @@ acceptable parameters for Service Providers (PATCH, PUT, POST) are:
 name, rate_cents, currency
 
 Ex: JSON Body Request for PATCH
-<pre> { "service_providers": {"currency": "USD", "rates_cents": 23.50}} </pre>
+```json { "service_providers": {"currency": "USD", "rates_cents": 23.50}} ```
 
-| Service Providers |
-|---|---|
+|:---:|:---:|
 | GET | localhost:3000/service_providers |    
 | POST | localhost:3000/service_providers |    
 | GET | localhost:3000/service_providers/:id |

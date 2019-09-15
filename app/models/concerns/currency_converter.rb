@@ -8,7 +8,7 @@ module CurrencyConverter
     end
 
   def convert_to_common_currency
-    self.common_amount_cents = rate.exchange_to("USD")
+    self.rate_cents = rate.exchange_to("USD")
   end
 
 end
