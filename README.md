@@ -1,6 +1,4 @@
-# README
-
-<h1 align="center">
+<h1 align="center" style="font-size:86px;">
   SHIPSTR
 </h1>
 
@@ -66,7 +64,7 @@ name, rate_cents, currency
 
 Ex: JSON Body Request for PATCH
 ```json
-    { "service_providers": 
+    { "service_providers":
         {"currency": "USD", "rates_cents": 23.50}
     }
 ```
