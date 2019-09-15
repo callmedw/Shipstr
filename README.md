@@ -39,9 +39,14 @@ acceptable parameters for Shipping Rates (PATCH, PUT, POST) are:
 rate_cents, currency, origin, destination,
 
 Ex: JSON Body Request for PATCH
-```json { "shipping_rates": {"currency": "USD", "rates_cents": 23.50}} ```
+```json
+    { "shipping_rates":
+        {"currency": "USD", "rates_cents": 23.50}
+    }
+```
 
-|:---:|:---:|
+| Verb | URI Pattern
+| ------ | ------ |
 | GET | localhost:3000/shipping_rates |    
 | POST | localhost:3000/shipping_rates |    
 | GET | localhost:3000/shipping_rates/:id |  
@@ -60,21 +65,21 @@ acceptable parameters for Service Providers (PATCH, PUT, POST) are:
 name, rate_cents, currency
 
 Ex: JSON Body Request for PATCH
-```json { "service_providers": {"currency": "USD", "rates_cents": 23.50}} ```
+```json
+    { "service_providers": 
+        {"currency": "USD", "rates_cents": 23.50}
+    }
+```
 
-|:---:|:---:|
+| Verb | URI Pattern
+| ------ | ------ |
 | GET | localhost:3000/service_providers |    
 | POST | localhost:3000/service_providers |    
 | GET | localhost:3000/service_providers/:id |
 | PATCH | localhost:3000/service_providers/:id |
 | PUT | localhost:3000/service_providers/:id |
 | DELETE | localhost:3000/service_providers/:id |
-| GET | /service_providers/:service_provider_id/shipping_rates |
-| POST | /service_providers/:service_provider_id/shipping_rates |
-| GET | /service_providers/:service_provider_id/shipping_rates/:id |
-| PATCH | /service_providers/:service_provider_id/shipping_rates/:id |
-| PUT | /service_providers/:service_provider_id/shipping_rates/:id |
-| DELETE | /service_providers/:service_provider_id/shipping_rates/:id |
+
 
 ## Required Technologies
 
